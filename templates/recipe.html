@@ -1,0 +1,33 @@
+{% extends "header.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <main class="flex justify-center items-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+            <h1 class="text-2xl font-bold mb-4">{{ recipe.name }}</h1>
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <span class="font-semibold mr-2">Рейтинг:</span>
+                    <span class="text-yellow-500">{{ recipe.rating }}</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-semibold mr-2">Категория:</span>
+                    <span>{{ recipe.category['category'].name }}</span>
+                </div>
+            </div>
+            <div class="ingredients">
+                <h2 class="text-xl font-semibold mb-4">Ингредиенты</h2>
+                <ul class="list-disc list-inside">
+                    {% for ingredient in ingredients %}
+                        <li class="mb-2">{{ ingredient.name }} - {{ ingredient.grams }} г.</li>
+                    {% endfor %}
+                    <li class="mb-2">Сахар - 100 г</li>
+                    <li class="mb-2">Яйца - 100 г.</li>
+                    <li class="mb-2">Какао - 20 г.</li>
+                </ul>
+            </div>
+        </div>
+
+{% endblock %}

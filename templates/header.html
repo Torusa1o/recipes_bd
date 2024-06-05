@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block head %}{% endblock %}
+    <title>Рецепты</title>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">Главная</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/recipe_pages" class="hover:text-gray-200">Рецепты</a></li>
+                    <li><a href="/category_pages" class="hover:text-gray-200">Категории</a></li>
+                    <li><a href="/ingredient_pages" class="hover:text-gray-200">Ингредиенты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
